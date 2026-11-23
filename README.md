@@ -78,7 +78,7 @@ NOVA-Serverless-AI-Chatbot/
 ### 1. Clone the repository
 
 ```bash
-git clone YOUR_GITHUB_REPOSITORY_URL
+git clone git clone https://github.com/dev-bhoomi17/NOVA-Serverless-AI-Chatbot.git
 ```
 
 ### 2. Navigate to the project directory
