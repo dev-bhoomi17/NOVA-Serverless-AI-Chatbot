@@ -1,0 +1,26 @@
+
+{
+  "name": "nova-serverless-ai-chatbot",
+  "version": "1.0.0",
+  "description": "A modern serverless AI chatbot with LLM integration.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env dev-server.js",
+    "start": "node dev-server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "ai-chatbot",
+    "serverless",
+    "llm",
+    "nodejs",
+    "javascript",
+    "prompt-engineering"
+  ],
+  "author": "",
+  "license": "MIT"
+}

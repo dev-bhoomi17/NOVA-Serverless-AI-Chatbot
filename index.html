@@ -1,0 +1,489 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#111326">
+
+    <title>NOVA — AI Chat Studio</title>
+
+    <meta
+        name="description"
+        content="NOVA is a conversational AI chat studio powered by a serverless backend."
+    >
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+
+    <div class="app-shell">
+
+        <!-- =====================================
+             SIDEBAR
+        ====================================== -->
+
+        <aside class="sidebar" id="sidebar">
+
+            <div class="sidebar-top">
+
+                <!-- BRAND -->
+                <a href="#" class="brand" aria-label="NOVA home">
+
+                    <div class="brand-mark">
+                        <span>N</span>
+                        <i></i>
+                    </div>
+
+                    <div class="brand-copy">
+                        <h1>NOVA</h1>
+                        <span>AI CHAT STUDIO</span>
+                    </div>
+
+                </a>
+
+
+                <!-- NEW CHAT -->
+                <button
+                    class="new-chat-button"
+                    id="new-chat-button"
+                    type="button"
+                >
+                    <span class="new-chat-icon">＋</span>
+                    <span>New conversation</span>
+                </button>
+
+
+                <!-- NAVIGATION -->
+                <nav class="sidebar-navigation">
+
+                    <p class="sidebar-label">WORKSPACE</p>
+
+                    <a href="#" class="sidebar-link active">
+                        <span class="sidebar-link-icon">◈</span>
+                        <span>Chat Studio</span>
+                    </a>
+
+                </nav>
+
+
+                <!-- CONVERSATION HISTORY -->
+                <section class="history-section">
+
+                    <div class="history-heading">
+                        <p class="sidebar-label">RECENT CHATS</p>
+
+                        <span class="history-count" id="history-count">
+                            0
+                        </span>
+                    </div>
+
+                    <div
+                        class="conversation-list"
+                        id="conversation-list"
+                    >
+
+                        <div class="history-empty">
+                            Your conversations<br>
+                            will appear here.
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- SIDEBAR BOTTOM -->
+            <div class="sidebar-bottom">
+
+                <div class="model-card">
+
+                    <div class="model-card-icon">
+                        ✧
+                    </div>
+
+                    <div class="model-card-details">
+                        <span>AI ENGINE</span>
+                        <strong id="sidebar-model">NOVA Assistant</strong>
+                    </div>
+
+                    <span class="model-status-dot"></span>
+
+                </div>
+
+
+                <div class="sidebar-footer">
+                    <div class="footer-avatar">N</div>
+
+                    <div class="footer-user">
+                        <strong>Personal Workspace</strong>
+                        <span>Local session</span>
+                    </div>
+
+                    <span class="footer-menu">···</span>
+                </div>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================
+             MAIN WORKSPACE
+        ====================================== -->
+
+        <main class="main-content">
+
+
+            <!-- TOP BAR -->
+            <header class="topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        class="mobile-menu-button"
+                        id="mobile-menu-button"
+                        type="button"
+                        aria-label="Toggle navigation"
+                    >
+                        ☰
+                    </button>
+
+                    <div class="breadcrumb">
+                        <span>Workspace</span>
+                        <span class="breadcrumb-divider">/</span>
+                        <strong>Chat Studio</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="connection-status" id="connection-status">
+
+                        <span class="connection-dot"></span>
+
+                        <span id="connection-label">
+                            DEMO MODE
+                        </span>
+
+                    </div>
+
+                    <button
+                        class="topbar-action"
+                        id="clear-chat-button"
+                        type="button"
+                        title="Clear current conversation"
+                        aria-label="Clear current conversation"
+                    >
+                        ↻
+                    </button>
+
+                </div>
+
+            </header>
+
+
+            <!-- CHAT WORKSPACE -->
+            <section class="chat-workspace">
+
+
+                <!-- WELCOME SCREEN -->
+                <section
+                    class="welcome-screen"
+                    id="welcome-screen"
+                >
+
+                    <div class="welcome-orbit">
+
+                        <div class="orbit-ring ring-one"></div>
+                        <div class="orbit-ring ring-two"></div>
+                        <div class="orbit-ring ring-three"></div>
+
+                        <div class="welcome-core">
+                            <span>N</span>
+                        </div>
+
+                        <div class="orbit-spark spark-one"></div>
+                        <div class="orbit-spark spark-two"></div>
+                        <div class="orbit-spark spark-three"></div>
+
+                    </div>
+
+
+                    <div class="welcome-content">
+
+                        <div class="welcome-eyebrow">
+                            <span class="welcome-eyebrow-dot"></span>
+                            YOUR AI WORKSPACE
+                        </div>
+
+                        <h2>
+                            A new way to<br>
+                            <span>think out loud.</span>
+                        </h2>
+
+                        <p>
+                            Ask questions, explore ideas, solve problems
+                            and turn your thoughts into something meaningful.
+                        </p>
+
+                    </div>
+
+
+                    <!-- SUGGESTED PROMPTS -->
+                    <section class="suggestions-section">
+
+                        <div class="suggestions-heading">
+                            <span>✧</span>
+                            <span>NOT SURE WHERE TO START?</span>
+                        </div>
+
+
+                        <div class="suggestion-grid">
+
+                            <button
+                                class="suggestion-card"
+                                data-prompt="Explain how serverless computing works with a simple example."
+                                type="button"
+                            >
+                                <span class="suggestion-icon icon-learn">
+                                    ◉
+                                </span>
+
+                                <span class="suggestion-text">
+                                    <strong>Learn something</strong>
+                                    <span>Understand a new concept</span>
+                                </span>
+
+                                <span class="suggestion-arrow">↗</span>
+                            </button>
+
+
+                            <button
+                                class="suggestion-card"
+                                data-prompt="Help me brainstorm three creative project ideas using artificial intelligence."
+                                type="button"
+                            >
+                                <span class="suggestion-icon icon-create">
+                                    ✳
+                                </span>
+
+                                <span class="suggestion-text">
+                                    <strong>Explore ideas</strong>
+                                    <span>Turn imagination into plans</span>
+                                </span>
+
+                                <span class="suggestion-arrow">↗</span>
+                            </button>
+
+
+                            <button
+                                class="suggestion-card"
+                                data-prompt="Give me a beginner-friendly JavaScript coding challenge and explain how to approach it."
+                                type="button"
+                            >
+                                <span class="suggestion-icon icon-code">
+                                    { }
+                                </span>
+
+                                <span class="suggestion-text">
+                                    <strong>Build something</strong>
+                                    <span>Explore code and technology</span>
+                                </span>
+
+                                <span class="suggestion-arrow">↗</span>
+                            </button>
+
+
+                            <button
+                                class="suggestion-card"
+                                data-prompt="Help me organize a productive plan for learning a new technical skill."
+                                type="button"
+                            >
+                                <span class="suggestion-icon icon-plan">
+                                    ◷
+                                </span>
+
+                                <span class="suggestion-text">
+                                    <strong>Plan your next step</strong>
+                                    <span>Make an idea actionable</span>
+                                </span>
+
+                                <span class="suggestion-arrow">↗</span>
+                            </button>
+
+                        </div>
+
+                    </section>
+
+                </section>
+
+
+                <!-- MESSAGE AREA -->
+                <section
+                    class="messages-area"
+                    id="messages-area"
+                    aria-label="Chat messages"
+                    aria-live="polite"
+                    hidden
+                >
+
+                    <div
+                        class="messages-list"
+                        id="messages-list"
+                    >
+
+                    </div>
+
+
+                    <!-- TYPING INDICATOR -->
+                    <div
+                        class="typing-indicator"
+                        id="typing-indicator"
+                        hidden
+                        role="status"
+                        aria-label="NOVA is generating a response"
+                    >
+
+                        <div class="typing-avatar">N</div>
+
+                        <div class="typing-content">
+
+                            <span>NOVA is thinking</span>
+
+                            <div class="typing-dots">
+                                <i></i>
+                                <i></i>
+                                <i></i>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </section>
+
+
+            <!-- =====================================
+                 MESSAGE COMPOSER
+            ====================================== -->
+
+            <footer class="composer-section">
+
+                <form
+                    class="composer-form"
+                    id="chat-form"
+                    autocomplete="off"
+                >
+
+                    <div class="composer-top">
+
+                        <textarea
+                            id="message-input"
+                            name="message"
+                            rows="1"
+                            maxlength="4000"
+                            placeholder="Message NOVA..."
+                            aria-label="Type your message"
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="composer-bottom">
+
+                        <div class="composer-tools">
+
+                            <span class="composer-mode-icon">✧</span>
+
+                            <span class="composer-mode-label">
+                                AI Conversation
+                            </span>
+
+                            <span class="composer-divider">/</span>
+
+                            <span
+                                class="character-count"
+                                id="character-count"
+                            >
+                                0 / 4000
+                            </span>
+
+                        </div>
+
+
+                        <button
+                            class="send-button"
+                            id="send-button"
+                            type="submit"
+                            aria-label="Send message"
+                            disabled
+                        >
+
+                            <span>Send</span>
+                            <span class="send-icon">↑</span>
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+
+                <p class="composer-disclaimer">
+                    NOVA can make mistakes. Check important information
+                    before relying on it.
+                </p>
+
+            </footer>
+
+
+            <!-- ERROR NOTIFICATION -->
+            <div
+                class="notification"
+                id="notification"
+                role="alert"
+                hidden
+            >
+
+                <span class="notification-icon">!</span>
+
+                <span id="notification-message">
+                    Something went wrong.
+                </span>
+
+                <button
+                    id="notification-close"
+                    type="button"
+                    aria-label="Dismiss notification"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+        </main>
+
+    </div>
+
+</body>
+</html>
